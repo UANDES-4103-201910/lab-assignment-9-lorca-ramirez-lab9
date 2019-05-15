@@ -8,5 +8,8 @@ class SessionsController < ApplicationController
 
 	def destroy
 		#complete this method
+		User.find(session[:user_id]).destroy      
+	    session[:user_id] = nil         
+	    redirect_to '/' 
 	end
 end
