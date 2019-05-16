@@ -8038,3 +8038,95 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 102ms (Views: 94.4ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/isidora/Desktop/lab-assignment-9-lorca-ramirez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-16 19:48:24 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Started GET "/" for ::1 at 2019-05-16 19:48:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Started GET "/" for ::1 at 2019-05-16 19:48:28 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Started GET "/" for ::1 at 2019-05-16 19:48:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 9511ms (Views: 9509.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 11453ms (Views: 11445.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 6132ms (Views: 6129.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 8444ms (Views: 8443.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-05-16 19:48:41 -0400
+Started GET "/users/auth/facebook" for ::1 at 2019-05-16 19:48:41 -0400
+Started GET "/users/auth/facebook/callback?code=AQCYdBx3_e_7UrEyZ5IlqIbvBkgicfreEBVoI4mJj1WAsG5U26Dtp3P1Dyv8729iLiuEOfpe94tmYJwWnZyhRmsFCbJai1NobcOYYoThkQxBfkiVdGomF0fBhcjIB1xZWOu00fo6ejXC1bqxCiF3K5-_5WHXc4wKLTAaOI3pQ3d9x58al46Hl6STzhhwxhr32GKM21duqNGWo0wkslPfPZ7TAEorBngPdDGZSJKO1dVxaplVeEc-3C8U1pAH9KnKQ4_uu-fcmOd_aGDB4SpzMpWcnc5gGdtHNfMuGiWV3xw9DD1wqhaXORFo5shZ4bqCNco&state=55ac7d670446c19885b599a5b7be2254f45b58b6c0f33baa" for ::1 at 2019-05-16 19:48:42 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCYdBx3_e_7UrEyZ5IlqIbvBkgicfreEBVoI4mJj1WAsG5U26Dtp3P1Dyv8729iLiuEOfpe94tmYJwWnZyhRmsFCbJai1NobcOYYoThkQxBfkiVdGomF0fBhcjIB1xZWOu00fo6ejXC1bqxCiF3K5-_5WHXc4wKLTAaOI3pQ3d9x58al46Hl6STzhhwxhr32GKM21duqNGWo0wkslPfPZ7TAEorBngPdDGZSJKO1dVxaplVeEc-3C8U1pAH9KnKQ4_uu-fcmOd_aGDB4SpzMpWcnc5gGdtHNfMuGiWV3xw9DD1wqhaXORFo5shZ4bqCNco", "state"=>"55ac7d670446c19885b599a5b7be2254f45b58b6c0f33baa"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10216726657093126"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "isi_viajera@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "isi_viajera@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/home/
+Completed 302 Found in 164ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/home/" for ::1 at 2019-05-16 19:48:43 -0400
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 19:49:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-05-16 19:49:22 -0400
+Started GET "/users/auth/facebook" for ::1 at 2019-05-16 19:49:22 -0400
+Started GET "/users/auth/facebook/callback?code=AQC3TjXi1a7QBuFCouIOQMKckDfU9kby7eN_qjPZtveLvV8ZXinvAxW9gzyMjA2fF49rfJdvaCJ8YMromEQF-Z3_hV4kXQsTgv6OLH4HaTjEKsgMKwzORkupfCQDWhMPNys03-6g5a8DDGQlie-58dRJ1RAit8X-L687CWAcM_TgFw69Lb5VVq1C0EhiKnuRmUayeGu41zGTJSilclx-HZ_ueLPuXqc_hriofyeAwBvbuJxSBB-LTFs5fQKK7wQT8XNY1PYhetto0QgBJIQ7YCG2AYkqH47MBkfk7212ghEb44gunuvqRVL5DhTmEG1NdNg&state=f96d0e47ac4b763cefbb95848459369e5155d5952a2467a5" for ::1 at 2019-05-16 19:49:37 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC3TjXi1a7QBuFCouIOQMKckDfU9kby7eN_qjPZtveLvV8ZXinvAxW9gzyMjA2fF49rfJdvaCJ8YMromEQF-Z3_hV4kXQsTgv6OLH4HaTjEKsgMKwzORkupfCQDWhMPNys03-6g5a8DDGQlie-58dRJ1RAit8X-L687CWAcM_TgFw69Lb5VVq1C0EhiKnuRmUayeGu41zGTJSilclx-HZ_ueLPuXqc_hriofyeAwBvbuJxSBB-LTFs5fQKK7wQT8XNY1PYhetto0QgBJIQ7YCG2AYkqH47MBkfk7212ghEb44gunuvqRVL5DhTmEG1NdNg", "state"=>"f96d0e47ac4b763cefbb95848459369e5155d5952a2467a5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10216726657093126"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "isi_viajera@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "isi_viajera@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/home/
+Completed 302 Found in 177ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/home/" for ::1 at 2019-05-16 19:49:38 -0400
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
